@@ -1,6 +1,6 @@
 {
   "name": "scrappepper",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Webscrapping, text manipulation etc.",
   "main": "index.js",
   "keywords": [

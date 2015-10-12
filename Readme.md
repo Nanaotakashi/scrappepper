@@ -17,138 +17,137 @@
 ## How to use
   **For JS,**
 
-  ```
+  ```js
     var pepper = require('scrappepper');
   ```
 
-  **generateCsv( json, exportFileConfig)**
-  ```
-    Function(s) : export to the CSV file
+  **generateCsv( json, exportFileConfig**
 
-    [ Simply use ]
+  Function(s) : export to the CSV file
+
+  [ NOTE ]
+  fields: if valued as [], function will grap the json data structure by ownself.
+  nested: defaulted as true.
+
+  ```js
+    // [ Simply use ]
     var exportFileConfig = { exportFullPath: 'exports/bigdata.csv' };
     pepper.generateCsv(results, exportFileConfig);
 
-    [ Advanced use ]
+    // [ Advanced use ]
     var exportFileConfig = {
       exportFullPath: 'exports/bigdata.csv',
-      fields: [] / [ANY fieldnames u liked, but should matched with the key(s) in JSON!!],
-      exportFullPath: string,
+      fields: [], // OR [ANY fieldnames u liked, but should matched with the key(s) in JSON!!]
       nested: true
     }
     pepper.generateCsv(results, exportFileConfig);
 
-    **NOTE**
-    fields: if valued as [], function will grap the json data structure by ownself.
-    nested: defaulted as true.
   ```
 
   **arrayChunk( array, counter );**
 
-  ```
-    Function(s) : Chunk 1D-array by counter, and returns 2D-array
+  Function(s) : Chunk 1D-array by counter, and returns 2D-array
 
-    **NOTE**
-    array: 1D-array
-    counter: number of values your want to group with and put them on the 2nd level array.
-  ```
+  [ NOTE ]
+  array: 1D-array
+  counter: number of values your want to group with and put them on the 2nd level array.
 
   **arrayDividend( array, partitionString )**
 
-  ```
-    Function(s) : Also return 2D-array, but the 1D-array chunked by the indication of "partitionString".
+  Function(s) : Also return 2D-array, but the 1D-array chunked by the indication of "partitionString".
 
-    [ Simply use ]
+  ```js
+    // [ Simply use ]
     var array = ['abc', 'def', 'partition', 'asdfaf', 'partition', 'akdslkasnm', 'mkljtor']
     console.log( pepper.arrayDividend( array, 'partition' ) );
 
-    RESULT >>
-    [ ['abc', 'def'], ['asdfaf'], ['akdslkasnm', 'mkljtor'] ]
+    // RESULT >>
+    // [ ['abc', 'def'], ['asdfaf'], ['akdslkasnm', 'mkljtor'] ]
   ```
 
   **arrayMode( array )**
 
-  ```
-    Function(s) : Return the most frequent / mode value (string)
+  Function(s) : Return the most frequent / mode value (string)
 
-    [ Simply use ]
+  ```js
+    // [ Simply use ]
     var array = ['abc', 'def', 'partition', 'asdfaf', 'partition', 'akdslkasnm', 'mkljtor']
     console.log( pepper.arrayMode(array) );
 
-    RESULT >>
-    'partition'
+    // RESULT >>
+    // 'partition'
   ```
 
   **arrayRemoveByValue( array, value )**
 
-  ```
-    Function(s) : Remain all array, except the value.
+  Function(s) : Remain all array, except the value.
 
-    [ Simply use ]
+  ```js
+    // [ Simply use ]
     var arr = ['a', 'b', 'c', 'd', 'a'];
     console.log( pepper.arrayRemoveByValue(arr , 'a') );
 
-    RESULT >>
-    [ 'b', 'c', 'd' ]
+    // RESULT >>
+    // [ 'b', 'c', 'd' ]
   ```
 
-    **strConvert( string )**
+  **strConvert( string )**
 
-  ```
-    Function(s) : Convert all sequence of characters
+  Function(s) : Convert all sequence of characters
 
-    [ Simply use ]
+  ```js
+    // [ Simply use ]
     console.log( pepper.strConvert('abc') );
 
-    RESULT >>
-    'cba'
+    // RESULT >>
+    // 'cba'
   ```
 
-    **strContain( fullString, comparingString )**
+  **strContain( fullString, comparingString )**
 
-  ```
-    Function(s) : Return ture or false
+  Function(s) : Return ture or false
 
-    [ Simply use ]
+  ```js
+    // [ Simply use ]
     console.log( pepper.strContain('abc', 'a') );
     console.log( pepper.strContain('abc', 'd') );
 
-    RESULT >>
-    true
-    false
+    // RESULT >>
+    // true
+    // false
   ```
 
-    **strSanitized( str )**
+  **strSanitized( str )**
 
-  ```
-    Function(s) : Remove some weird xml entitles and useless HTML tags.
+  Function(s) : Remove some weird XML entitles and useless HTML tags.
 
-    [ Simply use ]
+  ```js
+    // [ Simply use ]
     console.log( pepper.strSanitized('<strong>abc &amp; laksj</strong>') );
 
     RESULT >>
     'abc & laksj'
   ```
 
-    **strClassify2Arr( targetedString, regexType, spliter )**
+  **strClassify2Arr( targetedString, regexType, spliter )**
 
-  ```
-    Function(s) : Get the string, return the array after the regexType classification.
+  Function(s) : Get the string, return the array after the regexType classification.
 
-    [ Simply use ]
+  [ NOTE ]
+  regexType: 'email' / 'url' / 'website'
+  spliter: default as ' '  
+
+  ```js
+    // [ Simply use ]
     var str = 'abc ald@gmail.com akjs13 ask@gmail.com 123123';
     console.log( pepper.strClassify2Arr(str, 'email', ' ') );
 
-    RESULT >>
-    ['ald@gmail.com', 'ask@gmail.com']
-
-    **NOTE**
-    regexType: 'email' / 'url' / 'website'
-    spliter: default as ' '
+    // RESULT >>
+    // ['ald@gmail.com', 'ask@gmail.com']
   ```
 
 ## Release History
-- **v0.0.7** *12 Oct 2015*
+- **v0.0.7**, **v0.0.8** *12 Oct 2015*
   - Update the Readme.md & github ref
 - **v0.0.4 ~ v0.0.6** *11 Oct 2015*
   - Update the Readme.md
