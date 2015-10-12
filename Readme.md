@@ -148,6 +148,8 @@
   ```
 
 ## Release History
+- **v0.0.7** *12 Oct 2015*
+  - Update the Readme.md & github ref
 - **v0.0.4 ~ v0.0.6** *11 Oct 2015*
   - Update the Readme.md
 - **v0.0.2**, **v0.0.3** *09 Oct 2015*

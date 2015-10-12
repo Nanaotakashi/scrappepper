@@ -1,6 +1,6 @@
 {
   "name": "scrappepper",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Webscrapping, text manipulation etc.",
   "main": "index.js",
   "keywords": [
@@ -24,6 +24,10 @@
   "author": {
     "name": "nanaotakashi",
     "email": "garylikawai@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nanaotakashi/scrappepper"
   },
   "license": "ISC",
   "_id": "scrappepper@1.0.0",
