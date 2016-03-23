@@ -1,8 +1,15 @@
 {
   "name": "scrappepper",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Webscrapping, text manipulation etc.",
   "main": "index.js",
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "json2csv": "2.12.0",
+    "sanitize-html": "1.10.1",
+    "html-entities": "1.1.3"
+  },
+  "devDependencies": {},
   "keywords": [
     "webscrapping",
     "data mining",
@@ -11,13 +18,6 @@
     "array manipulation",
     "json"
   ],
-  "dependencies": {
-    "lodash": "^3.10.1",
-    "json2csv": "2.12.0",
-    "sanitize-html": "1.10.1",
-    "html-entities": "1.1.3"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

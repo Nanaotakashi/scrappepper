@@ -21,13 +21,12 @@
     var pepper = require('scrappepper');
   ```
 
-  **generateCsv( json, exportFileConfig**
+  **generateCsv( json, exportFileConfig )**
 
-  Function(s) : export to the CSV file
+  __&#8226; Function(s):__ export to the CSV file
 
-  [ NOTE ]
-  fields: if valued as [], function will grap the json data structure by ownself.
-  nested: defaulted as true.
+  __&#8226; fields:__ if valued as [], function will grap the json data structure by ownself.
+  __&#8226; nested:__ defaulted as true.
 
   ```js
     // [ Simply use ]
@@ -44,17 +43,16 @@
 
   ```
 
-  **arrayChunk( array, counter );**
+  **arrayChunk( array, counter )**
 
-  Function(s) : Chunk 1D-array by counter, and returns 2D-array
+  __&#8226; Function(s):__ Chunk 1D-array by counter, and returns 2D-array
 
-  [ NOTE ]
-  array: 1D-array
-  counter: number of values your want to group with and put them on the 2nd level array.
+  __&#8226; array__: 1D-array
+  __&#8226; counter:__ number of values your want to group with and put them on the 2nd level array.
 
   **arrayDividend( array, partitionString )**
 
-  Function(s) : Also return 2D-array, but the 1D-array chunked by the indication of "partitionString".
+  __&#8226; Function(s):__ Also return 2D-array, but the 1D-array chunked by the indication of "partitionString".
 
   ```js
     // [ Simply use ]
@@ -67,7 +65,7 @@
 
   **arrayMode( array )**
 
-  Function(s) : Return the most frequent / mode value (string)
+  __&#8226; Function(s):__ Return the most frequent / mode value (string)
 
   ```js
     // [ Simply use ]
@@ -80,7 +78,7 @@
 
   **arrayRemoveByValue( array, value )**
 
-  Function(s) : Remain all array, except the value.
+  __&#8226; Function(s):__ Remain all array, except the value.
 
   ```js
     // [ Simply use ]
@@ -93,7 +91,7 @@
 
   **strConvert( string )**
 
-  Function(s) : Convert all sequence of characters
+  __&#8226; Function(s):__ Convert all sequence of characters
 
   ```js
     // [ Simply use ]
@@ -105,7 +103,7 @@
 
   **strContain( fullString, comparingString )**
 
-  Function(s) : Return ture or false
+  __&#8226; Function(s):__ Return ture or false
 
   ```js
     // [ Simply use ]
@@ -119,23 +117,22 @@
 
   **strSanitized( str )**
 
-  Function(s) : Remove some weird XML entitles and useless HTML tags.
+  __&#8226; Function(s):__ Remove HTML DOM entitles and decode the HTML names.
 
   ```js
     // [ Simply use ]
     console.log( pepper.strSanitized('<strong>abc &amp; laksj</strong>') );
 
-    RESULT >>
-    'abc & laksj'
+    // RESULT >>
+    // 'abc & laksj'
   ```
 
   **strClassify2Arr( targetedString, regexType, spliter )**
 
-  Function(s) : Get the string, return the array after the regexType classification.
+  __&#8226; Function(s):__ Get the string, return the array after the regexType classification.
 
-  [ NOTE ]
-  regexType: 'email' / 'url' / 'website'
-  spliter: default as ' '  
+  __&#8226; regexType:__ 'email' / 'url' / 'website'
+  __&#8226; spliter:__ default as ' '  
 
   ```js
     // [ Simply use ]
@@ -147,6 +144,8 @@
   ```
 
 ## Release History
+- **v0.0.9** *23 Mar 2016*
+  - Update the Readme.md & 'stringHelper.strSanitized'
 - **v0.0.7**, **v0.0.8** *12 Oct 2015*
   - Update the Readme.md & github ref
 - **v0.0.4 ~ v0.0.6** *11 Oct 2015*
